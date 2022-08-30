@@ -17,6 +17,6 @@ jobs:
 
       - name: Generate and publish TS client
         run: |
-          docker run -u 1001 --rm --workdir /github/workspace -v ${GITHUB_WORKSPACE}:/github/workspace openapitools/openapi-generator-cli:v5.0.1 generate -i ./api_spec.yaml -g typescript-fetch -o ./workflow-management-go/typescript-fetch-client --additional-properties=typescriptThreePlus=true,npmName=@thirdknife/sample-openapi,npmRepository=https://registry.npmjs.org
+          docker run -u 1001 --rm --workdir /github/workspace -v ${GITHUB_WORKSPACE}:/github/workspace openapitools/openapi-generator-cli:v5.0.1 generate -i ./spec.yaml -g typescript-fetch -o ./workflow-management-go/typescript-fetch-client --additional-properties=typescriptThreePlus=true,npmName=@thirdknife/sample-openapi,npmRepository=https://registry.npmjs.org
           cd ./typescript-fetch-client
           npm install -y
